@@ -25,3 +25,37 @@
 4. 경고를 확인하고 저장한 경우 이를 명확히 알리는 안내를 추가했습니다.
 
 최종 결과: **12개 항목 모두 PASS**
+
+---
+
+# CKD Care v1.1 최종 검증 보고서
+
+검증일: 2026-08-17
+개발 브랜치: `feature/ckd-care-v1.1`
+
+| 항목 | 결과 | 실제 테스트 내용 |
+|---|---|---|
+| v1.0 localStorage migration | PASS | 기존 저장 키와 반려동물 1마리·검사 2건 유지, v1.1 기본 preference 추가 확인 |
+| 반려동물 등록·수정 | PASS | 체중 수정 및 두 번째 합성 반려동물 등록 확인 |
+| 반려동물 삭제 | PASS | 확인 문구와 연결 검사 1건 안내 후 반려동물·검사 연쇄 삭제 확인 |
+| 검사 저장·수정·삭제 | PASS | 복사 기록 저장, Cr 2.5→2.6 수정, 합성 검사 1건 삭제 확인 |
+| 검사 상세보기 | PASS | 20개 전체 필드와 병원명·메모 표시, 상세 화면에서 수정 진입 확인 |
+| 이전 검사 복사 | PASS | record_id·메모 제외, 오늘 날짜와 최근 수치 복사, 안내 토스트 확인 |
+| 검사 기간 필터 | PASS | 전체 4건 중 최근 3개월 3건 표시, 원본 데이터 유지 확인 |
+| 그래프 기간·요약 | PASS | 6개월 3회, 첫 2.0·최근 2.6·변화 +0.6(+30%) 확인; 미니/메인 동기화 |
+| 변화량·변화율 | PASS | 기존 비교와 신규 그래프 요약 계산 확인 |
+| 검사 항목 도움말 | PASS | Creatinine 설명과 의료 판단 금지 안내 확인 |
+| CSV 내보내기 | PASS | 합성 반려동물 CSV 다운로드 시작 안내 확인 |
+| v1.1 JSON 백업 | PASS | v1.1 메타 구조 코드·파일명·마지막 백업 시각·안내 상태 확인 |
+| v1.0/v1.1 JSON 호환 | PASS | 두 버전 합성 구조를 격리 origin에서 migration하여 반려동물·preference 확인 |
+| favicon | PASS | `/favicon.ico` HTTP 200 및 `image/x-icon` 확인 |
+| PWA manifest | PASS | manifest·192/512 아이콘·service worker 모두 HTTP 200, 빌드 포함 확인 |
+| 모바일 반응형 | PASS | 360·390·412·430px에서 가로 overflow 없음, 390×844에서 table 숨김·카드 표시 확인 |
+| 공식 링크 | PASS | 네이버 카페·YouTube·Instagram URL 및 새 탭 속성 유지 확인 |
+| Production 빌드 | PASS | `npm run build`, JavaScript 문법 검사, diff whitespace 검사 통과 |
+| 브라우저 콘솔 | PASS | 주요 기능·삭제 흐름까지 error/warning 0건 |
+
+## 참고
+
+- 브라우저 자동화 환경의 네이티브 파일 선택기가 응답하지 않아 JSON 파일 선택 자체는 자동화하지 못했습니다. 대신 동일한 v1.0/v1.1 JSON 구조를 서로 다른 깨끗한 origin에 주입하고 앱의 실제 migration·렌더링 결과를 검증했습니다.
+- main 병합과 Production 배포는 수행하지 않았습니다.
