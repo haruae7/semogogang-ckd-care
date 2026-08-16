@@ -32,3 +32,5 @@ python -m http.server 4173
 ## 의료 안전
 
 이 앱은 기록·계산·비교·추세 확인을 위한 도구입니다. CKD 진단, IRIS Stage 자동 판정, 약물·보조제·수액 용량 결정 또는 치료 변경 지시를 제공하지 않습니다.
+
+Deployment test: GitHub �� Vercel automatic production deployment.
