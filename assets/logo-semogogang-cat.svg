@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">세모고강 로고</title>
+  <desc id="desc">따뜻한 코랄색 둥근 사각형 안의 흰색 선으로 그린 고양이 얼굴</desc>
+  <rect width="64" height="64" rx="17" fill="#F28B70"/>
+  <path d="M18 27 20.5 15 30 22.5c1.3-.25 2.7-.25 4 0L43.5 15 46 27v9.5C46 45 40 50 32 50s-14-5-14-13.5V27Z" fill="none" stroke="#FFF" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M25.5 33.2h.1M38.4 33.2h.1" stroke="#FFF" stroke-width="4" stroke-linecap="round"/>
+  <path d="m29.5 39 2.5 1.8 2.5-1.8M32 40.8v2.7M27 42.5l-7 1.8M37 42.5l7 1.8" fill="none" stroke="#FFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
